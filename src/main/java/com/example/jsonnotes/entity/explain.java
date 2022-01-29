@@ -1,4 +1,4 @@
-package com.example.jsonnotes.dao;
+package com.example.jsonnotes.entity;
 
 import lombok.Data;
 

@@ -2,8 +2,8 @@ package com.example.jsonnotes;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.example.jsonnotes.dao.explain;
-import com.example.jsonnotes.dao.inventory;
+import com.example.jsonnotes.entity.explain;
+import com.example.jsonnotes.entity.inventory;
 import com.example.jsonnotes.mapper.InventoryMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,13 +19,6 @@ public class test {
 
     @Resource
     private InventoryMapper InventoryMapper;
-
-    @Test
-    public void selectAll() {
-        System.out.println(("----- selectAll method test ------"));
-        List<inventory> inventoryList = InventoryMapper.selectList(null);
-        inventoryList.forEach(System.out::println);
-    }
 
     @Test
     public void selectTitle() {

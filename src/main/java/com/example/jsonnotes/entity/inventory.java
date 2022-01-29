@@ -1,4 +1,4 @@
-package com.example.jsonnotes.dao;
+package com.example.jsonnotes.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
