@@ -2,6 +2,7 @@ package com.example.jsonnotes;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.jsonnotes.entity.explain;
 import com.example.jsonnotes.entity.inventory;
 import com.example.jsonnotes.mapper.InventoryMapper;
@@ -37,6 +38,16 @@ public class JsonNotesTest {
         queryWrapper.lt("JSON_VALUE(items, '$.price' RETURNING DECIMAL(5,2))", 100.01);
         List<inventory> inventoryList = InventoryMapper.selectList(queryWrapper);
         inventoryList.forEach(System.out::println);
+    }
+
+    @Test
+    public void selectPage() {
+        System.out.println(("----- selectPage method test ------"));
+        Page<inventory> page = new Page<>(1, 2);
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("JSON_VALUE ( items, '$.name' RETURNING CHAR ( 50 ) )", "hat");
+        Page<inventory> inventoryList = InventoryMapper.selectPage(page, queryWrapper);
+        inventoryList.getRecords().forEach(System.out::println);
     }
 
     @Test
