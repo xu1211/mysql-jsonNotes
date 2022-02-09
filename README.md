@@ -27,8 +27,13 @@
 
 测试 shardingJdbc + mybatis-plus 使用 jsonNotes
 
->2022/2/8 ：目前不支持，已提给 Apache ShardingSphere，反馈一周内会支持。一周后在测
+> 2022/2/8 ：
+> 目前不支持，已提给 Apache ShardingSphere，反馈一周内会支持。一周后在测
 
+> 2020/2/9：
+> SphereEx开源牛逼，已适配sql语法，等merge后就能测了
+> https://community.sphere-ex.com/t/topic/763/4
+> 
 - 改动点
     1. 新增依赖 pom.xml
     ```xml
