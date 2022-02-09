@@ -15,7 +15,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = JsonNotesApplication.class)
-public class test {
+public class JsonNotesTest {
 
     @Resource
     private InventoryMapper InventoryMapper;
