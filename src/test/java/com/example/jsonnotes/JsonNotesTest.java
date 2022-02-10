@@ -41,6 +41,16 @@ public class JsonNotesTest {
     }
 
     @Test
+    public void selectNoReturningPage() {
+        System.out.println(("----- selectNoReturningPage method test ------"));
+        Page<inventory> page = new Page<>(1, 2);
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("JSON_VALUE ( items, '$.name')", "hat");
+        Page<inventory> inventoryList = InventoryMapper.selectPage(page, queryWrapper);
+        inventoryList.getRecords().forEach(System.out::println);
+    }
+
+    @Test
     public void selectPage() {
         System.out.println(("----- selectPage method test ------"));
         Page<inventory> page = new Page<>(1, 2);
